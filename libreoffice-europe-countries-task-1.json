@@ -1,0 +1,62 @@
+{
+  "id": "libreoffice-europe-countries-task-1",
+  "snapshot": "libreoffice_writer",
+  "instruction": "The LibreOffice writer document has list of few countries, select countries under Europe section, and make it a ordered/numbered list and save it.",
+  "source": "Turing",
+  "trajectory": "trajectories/",
+  "config": [
+    {
+      "type": "download",
+      "parameters": {
+        "files": [
+          {
+            "url": "https://huggingface.co/datasets/Asad-tr/polaris_files/resolve/main/List%20of%20a%20few%20countries.docx",
+            "path": "/home/user/Desktop/list-countries.docx"
+          }
+        ]
+      }
+    },
+    {
+      "type": "open",
+      "parameters": {
+        "path": "/home/user/Desktop/list-countries.docx"
+      }
+    }
+  ],
+  "related_apps": ["libreoffice_writer"],
+  "evaluator": {
+    "func": "compare_numbered_lists",
+    "result": {
+      "type": "vm_file",
+      "path": "/home/user/Desktop/list-countries.docx",
+      "dest": "list-countries.docx"
+    },
+    "expected": {
+      "type": "cloud_file",
+      "path": "https://huggingface.co/datasets/Asad-tr/polaris_files/resolve/main/List%20of%20a%20few%20countries%20-%20golden.docx",
+      "dest": "list-countries_golden.docx"
+    }
+  },
+  "proxy": false,
+  "fixed_ip": false,
+  "possibility_of_env_change": "low",
+  "model_pass_rate": {
+    "claude-4-sonnet-20250514": 0.5
+  },
+  "annotator_hints": [
+    "Step 1: Select the countries",
+    "Step 2: Apply numbering",
+    "Step 3: Save the file"
+  ],
+  "knowledge_points": [
+  "Text Selection",
+  "List Formatting (Numbered/Ordered List)",
+  "File Saving",
+  "Section Identification",
+  "Mouse Interaction (Click & Drag)",
+  "Shortcut vs. Toolbar Usage",
+  "Multi-Step Execution"
+],
+"coverage": "Formatting numbered/ordered list"
+
+}
